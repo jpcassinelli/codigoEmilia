@@ -12,7 +12,7 @@
         body {
             margin: 0;
             font-family: 'Brush Script MT', cursive; /* Utiliza la fuente Brush Script MT */
-            background-image: url('fondo.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta correcta a tu imagen de fondo */
+            background-image: url('fondo.jpg'); 
            
             color: white;
             display: flex;
@@ -27,7 +27,7 @@
             border-radius: 10px;
             padding: 40px 20px;
             text-align: center;
-            width:580px;
+            width:80%;
        
         }
 
@@ -49,6 +49,7 @@
             text-decoration: none;
             font-size: 16px;
             cursor: pointer;
+           
         }
 
         button:hover {
@@ -57,13 +58,13 @@
         
         /* Aplicar la fuente al contenido del popup */
         .ui-dialog{
-			width: 580px !important;
+			width: 80% !important;
         }
         .ui-dialog-content {
 			font-family: 'Brush Script MT', cursive;
 			margin: 25px;
 			font-size: 25px !important;
-			width: 500px !important;
+			width: 80% !important;
         }
     </style>
     <script>
@@ -125,10 +126,10 @@
         <h1>Validación de Clave</h1>
         
         <form id="miFormulario">
-        <input type="password" id="clave" placeholder="Ingrese su clave">
+        <input type="password" id="clave" placeholder="Ingrese la clave">
 
         <br>
-        <button type="submit">Validar Clave</button>
+        <button type="submit">Validar</button>
     </div>
 
     <div id="popup" title="Resultado"></div>
