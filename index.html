@@ -6,6 +6,7 @@
     <title>Validación de Clave</title>
     <link rel="stylesheet" href="jquery/jquery-ui.css">
     <script src="jquery/jquery-3.6.4.min.js"></script>
+    <script src="js/md5.min.js"></script>
     <script src="jquery/jquery-ui.js"></script>
     <style>
         body {
@@ -67,7 +68,8 @@
     </style>
     <script>
         $(document).ready(function () {
-            $("#popup").dialog({
+	        
+			$("#popup").dialog({
                 autoOpen: false,
                 modal: true,
                 buttons: {
@@ -95,9 +97,9 @@
 
         function validarClave() {
             var claveIngresada = document.getElementById("clave").value;
-            var claveCorrecta = "chocolate";
+            var claveCorrecta = "c378985d629e99a4e86213db0cd5e70d";
 
-            if (claveIngresada === claveCorrecta) {
+            if (md5(claveIngresada) === claveCorrecta) {
                 mostrarPopup("Felicitaciones!! demostraste ser un investigador genial, ya pueden entrar a festejar!!!!.");
             } else {
                 mostrarPopup("MMM me parece no investigaste mucho!! Puedes intentar otra vez!!");
