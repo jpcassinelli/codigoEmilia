@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Clave</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('fondo.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta correcta a tu imagen de fondo */
+           
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh
+        }
+
+        #contenedor {
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro transparente */
+            border-radius: 10px; /* Bordes redondeados */
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        label, input, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Color de fondo verde */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Cambia el color de fondo al pasar el ratón */
+        }
+    </style>
+    <script>
+        function validarClave() {
+            // Obtener el valor ingresado en el campo de texto
+            var claveIngresada = document.getElementById("clave").value;
+
+            // Clave de referencia (puedes cambiarla según tus necesidades)
+            var claveCorrecta = "chocolate";
+
+            // Verificar si la clave ingresada coincide con la clave de referencia
+            if (claveIngresada === claveCorrecta) {
+                // Mensaje de éxito
+                alert("¡Clave correcta! Acceso permitido.");
+            } else {
+                // Mensaje de error
+                alert("Clave incorrecta. Acceso denegado.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="contenedor">
+        <h1>Validación de Clave</h1>
+        
+        <label for="clave">Ingrese su clave:</label>
+        <input type="password" id="clave" placeholder="Ingrese su clave">
+
+        <br>
+
+        <button onclick="validarClave()">Validar Clave</button>
+    </div>
+</body>
+</html>

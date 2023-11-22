@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Clave</title>
+    <link rel="stylesheet" href="jquery/jquery-ui.css">
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Brush Script MT', cursive; /* Utiliza la fuente Brush Script MT */
+            background-image: url('fondo.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta correcta a tu imagen de fondo */
+           
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh
+        }
+
+        #contenedor {
+			
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            width:580px;
+       
+        }
+
+		h1 {
+            font-family: 'Brush Script MT', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        label, input, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        /* Aplicar la fuente al contenido del popup */
+        .ui-dialog{
+			width: 580px !important;
+        }
+        .ui-dialog-content {
+			font-family: 'Brush Script MT', cursive;
+			margin: 25px;
+			font-size: 25px !important;
+			width: 500px !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#popup").dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    Ok: function () {
+                        $(this).dialog("close");
+                        limpiarFormulario();
+                    }
+                }
+                ,
+					close: function () {
+						limpiarFormulario();
+					}
+            });
+            
+            // Configurar el evento submit para el formulario
+            $("#miFormulario").submit(function (e) {
+                e.preventDefault(); // Prevenir el envío del formulario
+                validarClave();
+            });
+            
+            
+            // Hacer foco en el campo de contraseña al cargar la página
+            $("#clave").focus();
+        });
+
+        function validarClave() {
+            var claveIngresada = document.getElementById("clave").value;
+            var claveCorrecta = "chocolate";
+
+            if (claveIngresada === claveCorrecta) {
+                mostrarPopup("Felicitaciones!! demostraste ser un investigador genial, ya pueden entrar a festejar!!!!.");
+            } else {
+                mostrarPopup("MMM me parece no investigaste mucho!! Puedes intentar otra vez!!");
+            }
+        }
+
+        function mostrarPopup(mensaje) {
+            $("#popup").text(mensaje);
+            $("#popup").dialog("open");
+        }
+       
+
+		function limpiarFormulario() {
+            document.getElementById("clave").value = ""; // Limpiar el campo de contraseña
+            $("#clave").focus(); // Hacer foco en el campo de contraseña
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="contenedor">
+        <h1>Validación de Clave</h1>
+        
+        <form id="miFormulario">
+        <input type="password" id="clave" placeholder="Ingrese su clave">
+
+        <br>
+        <button type="submit">Validar Clave</button>
+    </div>
+
+    <div id="popup" title="Resultado"></div>
+</body>
+</html>
