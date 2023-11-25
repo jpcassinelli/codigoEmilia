@@ -27,7 +27,30 @@
             margin: 10px;
             background-color: white;
         }
+		.soluciones {
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            color: red;
+        }
+        .soluciones h2{
+			color:#000;
+		}
+		div.det_soluciones{
+			display:none;
+		}
     </style>
+     <script>
+        function cambiarColor() {
+            // Obtener el elemento con la clase "soluciones"
+            var solucionesDiv = document.querySelector('.det_soluciones');
+
+            // Cambiar el color de fuente a rojo (puedes ajustar el color según tus preferencias)
+            solucionesDiv.style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -36,7 +59,7 @@
 
     <div class="adivinanza">
         <h2>Vamos a practicar un poco, te animas?</h2>
-        <p>El papa de Emilia se llama <b>ZLQD GQRBF</b>y hoy va a hacer <b>XQCRLIWLUJQJ</b> para todos</p>
+        <p>El papa de Emilia se llama <b>ZLQD GQRBF</b> y hoy va a hacer <b>XQCRLIWLUJQJ</b> para todos</p>
         <!-- Puedes agregar más estilos o imágenes relacionadas con la adivinanza si lo deseas -->
     </div>
 
@@ -73,6 +96,25 @@
         <!-- Puedes agregar más estilos o imágenes relacionadas con la adivinanza si lo deseas -->
     </div>
 
+
+    <div id="div_soluciones" class="soluciones">
+        <h2><a href="#div_soluciones" onclick="cambiarColor()">...Ver Soluciones...</a> </h2>
+        <div class="det_soluciones">
+			<p><b>Enola</b> es la hermana de Sherlock Holmes y le gusta jugar al <b>ajedrez</b><h3> Código:20. </h3></p>
+			<hr>
+			<p>El papa de Emilia se llama <b>Juan Pablo</b> y hoy va a hacer <b>hamburguesas</b> para todos<h3> Código:17. </h3></p>
+			<hr>
+			<p>Vamos a la <b>playa</b> a curar el alma, cierra la pantalla y <b>ganen una nueva</b> medalla<h3> Código:05. </h3></p>
+			<hr>
+			<p>Va una <b>adivinanza</b> ¿Qué le dice un techo a otro? <b>Techo de menos</b><h3> Código:11. </h3></p>
+			<hr>
+			<p>Encuentra el error: Pablito <b>clavo</b> un clavito, que <b>tornillo</b> clavo Pablito<h3> Código:25. </h3></p>
+			<hr>
+			<p> Papá, papá, me ha <b>mordido</b> una serpiente.</br>
+				— ¿Cobra?</br>
+				— No, me ha mordido <b>gratis</b><h3> Código:11. </h3></p>
+		</div>
+    </div>
  
     <footer>
         <p>¡Espero que hayas disfrutado !</p>
